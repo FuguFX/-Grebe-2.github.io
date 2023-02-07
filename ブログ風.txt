@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+
+a {
+	text-decoration: none;
+    }
+
+body {
+	margin: 0px;
+    }
+
+.header {
+	background-color: #efefef;
+    }
+
+.header-picture {
+	filter: blur(2px);
+    }
+
+.header-text1 {
+	text-align: center;
+    position: relative;
+    bottom: 240px;
+    color: white;
+    font-family: けいふぉんと;
+    font-weight: lighter;
+    font-size: 45px;
+    }
+    
+.header-text2 {
+	text-align: center;
+    position: relative;
+    bottom: 150px;
+    left: 10px;
+    color: black;
+    opacity: 0.2;
+    font-family: けいふぉんと;
+    font-weight: lighter;
+    font-size: 45px;
+    }
+
+.user-name {
+	text-decoration: none;
+    color: #888879;
+    transition: all 0.5s 0s ease;
+    }
+    
+.user-name:hover {
+    text-decoration: underline;
+    color: #333;
+    }
+
+.main {
+	background-color: #efefef;
+	padding-left: 50px;
+    font-family: UD デジタル 教科書体  NK-R;
+    position: relative;
+    bottom: 150px;
+    color: #4c4c4c;
+    }
+    
+.profile {
+	position: relative;
+    left: 250px;
+    bottom: 220px;
+    }
+    
+.profile-picture {
+	filter: blur(0px);
+    transition: all 0.5s 0s ease;
+    }
+    
+.profile-picture:hover {
+	filter: blur(2px);
+    }
+    
+.account-text {
+	text-align: center;
+	position: relative;
+    bottom: 150px;
+    font-size: 20px;
+    }
+
+.github {
+    position: relative;
+    bottom: 150px;
+    transition: all 0.5s 0s ease;
+    }
+    
+.github:hover {
+	filter: drop-shadow(3px 3px 3px #000);
+    }
+
+.scratch {
+    position: relative;
+    bottom: 150px;
+    left: 150px;
+    transition: all 0.5s 0s ease;
+    }
+
+.scratch:hover {
+	filter: drop-shadow(3px 3px 3px #000);
+	}
+
+.thumbnail {
+    position: relative;
+    bottom: 80px;
+    left: 250px;
+    border-radius: 30px;
+    filter: blur(0px);
+    transition: all 0.5s 0s ease;
+    }
+
+.sentence {
+	position: relative;
+    bottom: 300px;
+    }
+
+.footer {
+    position: relative;
+    bottom: 220px;
+	padding-left: 50px;
+    color: #efefef;
+    background-color: #4c4c4c;
+    padding-top: 100px;
+    padding-bottom: 150px;
+    font-size: 10px;
+    }
+
+.footer-text {
+	text-align: center;
+    font-family: UD デジタル 教科書体  NK-R;
+    }
+
+.button1 {
+    position: relative;
+    bottom: 300px;
+    left: 310px;
+	text-align: center;
+	width: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: #1c75bc;
+    color: #efefef;
+    font-size:20px;
+    text-decoration: none;
+    transition: all 0.5s 0s ease;
+    }
+    
+.button1:hover {
+	left: 270px;
+	padding-right: 50px;
+    padding-left: 50px;
+    }
+
+.text-design1 {
+	width: 300px;
+	background-color: #efefef;
+	padding-left: 10px;
+	border-left: solid 5px #1c75bc;
+	}
+    
+.text-design2 {
+	width: 300px;
+    background-color: #efefef;
+    padding-left: 10px;
+    border: solid 5px #1c75bc;
+    border-radius: 10px;
+    }
+    
+.text-design3 {
+	width: 200px;
+    font-size: 40px;
+    padding-top: 20px;
+    border-bottom: solid 5px #1c75bc;
+    line-height: 30px;
+    }
+    
+.text-design4 {
+	width: 300px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    line-height: 2px;
+    }
+    
+.text-design4::first-letter {
+	font-size: 50px;
+    color: #1c75bc; 
+    }
+
+</style>
+</head>
+<body>
+
+<div class="header">
+
+<img class="header-picture" src ="https://raw.githubusercontent.com/FuguFX/imgs/main/img/DSCN1509.jpg" style="width:625px">
+
+<h1 class="header-text2">ぐれべの部屋</h1>
+<h1 class="header-text1">ぐれべの部屋</h1>
+
+</div>
+
+<div class="main">
+
+<img class="profile-picture" src="https://raw.githubusercontent.com/FuguFX/imgs/6193dd3fcbce97e88f24ca4d908d696b9e7d669c/img/Logo.svg" style="width:150px">
+
+<div class="profile">
+
+<h1 class="text-design3">ぐれべ</h1>
+
+<h2><a href="https://scratch.mit.edu/users/-Grebe-/" class="user-name">@-Grebe-</a></h2>
+
+</div>
+
+<div class="account">
+
+<div class="account-text"><h1>アカウント</h1></div>
+<a href="https://github.com/FuguFX" class="github"><img src="https://raw.githubusercontent.com/FuguFX/imgs/833b702e9c62620f4cdb44ac44c68dd25ec2b0e7/img/logo-github.svg" style="height:80px"></a>
+<a href="https://scratch.mit.edu/users/-Grebe-/" class="scratch"><img src="https://raw.githubusercontent.com/FuguFX/imgs/833b702e9c62620f4cdb44ac44c68dd25ec2b0e7/img/logo-scratch.svg" style="height:80px"></a>
+
+</div>
+
+<img class="thumbnail" src ="https://raw.githubusercontent.com/FuguFX/imgs/main/img/Thumbnail.png" style ="width:250px;">
+
+<div class="sentence">
+<h1 class="text-design4">こんにちは！</h1>
+<h2>ぐれべです</h2>
+<h2>プログラミングと</h2>
+<h2>ゲームが趣味です！</h2>
+
+
+</div>
+<a href ="https://scratch.mit.edu/users/-Grebe-/projects/"><h1 class="button1">他のも見る</h1></a>
+</div>
+
+<div class="footer">
+<div class="footer-logo">
+<img src ="https://raw.githubusercontent.com/FuguFX/imgs/6193dd3fcbce97e88f24ca4d908d696b9e7d669c/img/Logo.svg" style="width:50px">
+<h1 class="footer-text">©-Grebe-</h1>
+</div>
+
+</body>
+</html>
+
