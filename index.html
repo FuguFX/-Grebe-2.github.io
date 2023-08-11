@@ -1,306 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-<title>FuguFX.github.io</title>
-<link rel="icon" href="https://raw.githubusercontent.com/FuguFX/FuguFX.github.io/main/img/favicon.ico">
-<style>
-body {
-	margin: 0px;
-    font-family: Meiryo UI;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FuguFXのサイト</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/FuguFX/history/main/imgs/favicon.ico">
 
-.header {
-	z-index: 100;
-    color: #fff;
-    background-color: #33333380;
-    position: fixed;
-    width: 1300px;
-    line-height: 1px;
-    }
-    
-.header-logo {
-	padding-top: 40px;
-	text-align: center;
-    width: 1300px;
-    }
+    <style>
+        body {
+            margin: 0px;
+            cursor: auto;
+            overflow-x: hidden;
+            width: 100%;
+            height: 100%;
+            background-color: #efedeb;
+        }
 
-a {
-	text-decoration: none;
-    color: white;
-    transition: all 0.5s 0s ease;
-    }
+        .title {
+            text-align: center;
+            line-height: auto;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            font-family: 游ゴシック;
+            font-weight: bold;
+            font-size: 30px;
+            background-color: #ff1f4b;
+            color: #efedeb;
+        }
 
-p {
-	text-decoration: none;
- 	float: left;
- 	font-size: 20px;
-	padding-left: 80px;
-    padding-right: 40px;
-    color: #fff;
-    transition: all 0.5s 0s ease;
-    }
+        .move {
+            text-align: center;
+            font-family: 游ゴシック;
+            font-size: 20px;
+        }
 
-p:hover {
-	color: #ffffff80;
-    }
+        .move p {
+            padding-top: 4px;
+            padding-bottom: 2px;
+            margin-top: -10px;
+            width: 50%;
+            height: 30px;
+            float: left;
+            background-color: #ff1f4b;
+            color: #efedeb;
+            text-decoration: none;
+            transition: all 0.5s 0s ease;
+        }
 
-.banner-top {
-	width: 1300px;
-	padding-top: 24px;
-    padding-bottom: 100px;
-    background-color: #333333;
-    }
+        .move p:hover {
+            background-color: #ca1a3d;
+        }
 
-.header-photo {
-	width: 1300px;
-	background-color: #ececec;
-    padding-bottom: 10px;
-    }
+        .move a {
+            color: #efedeb;
+            text-decoration: none;
+        }
 
-.main {
-	width: 1300px;
-	padding-top: 50px;
-	background-color: #ececec;
-    }
+        .main {
+            font-family: 游ゴシック;
+            color: #ff1f4b;
+            width: 400px;
+            margin-left: 440px;
+            padding-bottom: 50px;
+        }
 
-.face1 {
-	padding-left: 525px;
-    }
+        .main h1 {
+            text-align: center;
+        }
 
-.face2 {
-	text-align: center;
-	width: 250px;
-	padding-top: 37px;
-    padding-bottom: 37px;
-    background-color: #dbdbdb;
-    border-radius: 1000px;
-    }
+        .main p {
+            text-align: left;
+        }
 
-.name {
-	text-align: center;
-    }
+        .main a {
+            color: #ff1f4b;
+            text-decoration: none;
+            transition: all 0.5s 0s ease;
+        }
 
-.sentence {
-	text-align: center;
-    color: #777777;
-    }
+        .main a:hover {
+            color: #ca1a3d;
+        }
 
-.big1 {
-	padding-top: 50px;
-    padding-left: 350px;
-    }
-
-.big2 {
-	width: 400px;
-	padding-left: 100px;
-    transition: all 1s 0s ease;
-    }
-    
-.big2:hover {
-	padding-left: 0px;
-    }
-    
-.big3 {
-	color: #000;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	width: 400px;
-	font-size: 20px;
-    text-align: center;
-    background-color: #6AC1B7;
-    border-radius: 20px;
-    transition: all 1s 0s ease;
-    }
-    
-.big3:hover {
-	width: 600px;
-	color: #6AC1B7;
-    background-color: #000;
-    }
-
-.language {
-	padding-top: 50px;
-    padding-bottom: 50px;
-	padding-left: 250px;
-    letter-spacing:250px;
-	}
-    
-.lan-animation {
-    transition: all 1s 0s ease;
-    }
-    
-.lan-animation:hover {
-	filter: drop-shadow(2px 2px 2px #444444);
-    }
-
-.js {
-    transition: all 1s 0s ease;
-    }
-    
-.js:hover {
-	filter: drop-shadow(2px 2px 2px #444444);
-    }
-
-.center1 {
-	padding-top: 10px;
-	padding-left: 250px;
-    }
-
-.center2 {
-	color: #555555;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	width: 800px;
-	font-size: 15px;
-    text-align: center;
-    background-color: #dbdbdb;
-    border-radius: 20px;
-    }
-
-.thumbnail {
-	padding-left: 450px;
-    }
-
-.thumbnail1 {
-	filter: blur(3px);
-	padding-top: 50px;
-    padding-bottom: 50px;
-    width: 300px;
-    border-radius: 20px;
-    transition: all 1s 0s ease;
-    }
-
-.thumbnail1:hover {
-	filter: blur(0px);
-    }
-
-.thumbnail2 {
-	filter: blur(3px);
-	padding-top: 50px;
-    padding-bottom: 50px;
-    width: 300px;
-    border-radius: 20px;
-    transition: all 1s 0s ease;
-    }
-
-.thumbnail2:hover {
-	filter: blur(0px);
-    }
-    
-.explain {
-	padding-left: 50px;
-    padding-right: 50px;
-	color: #000;
-	padding-top: 2px;
-	padding-bottom: 2px;
-    text-align :center;
-	width: 300px;
-	font-size: 15px;
-    background-color: #235180;
-    border-radius: 20px;
-    transition: all 1s 0s ease;
-    }
-    
-.explain:hover {
-	background-color: #7B9AD0;
-    color: #dbdbdb;
-    }
-
-.space {
-	padding-bottom: 50px;
-    }
-
-.footer {
-text-align: center;
-	background-color: #333333;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    width: 1300px;
-    color: #dbdbdb
-    }
-
-</style>
+    </style>
 </head>
 <body>
-<div class="header">
-<div class="header-logo">
-<h1>ふぐえふえっくすのあああ</h1>
-</div>
-<p><a href="https://scratch.mit.edu/users/-Grebe-/">Scratch</a></p>
-<p><a href="https://github.com/FuguFX">GitHub</a></p>
-<p><a href="https://scratch.mit.edu/users/-Grebe-/projects/">作品集</a></p>
-<p><a href="https://github.com/FuguFX/Comments/issues/1">お話</a></p>
-</div>
+    <div class="title">
+        <p>私について</p>
+    </div>
 
-<div class="banner-top">
-<h1></h1>
-</div>
-<div class="header-photo">
-<img src="https://raw.githubusercontent.com/FuguFX/FuguFX.github.io/6bd8a803d7362e5a509674360927e849a5f16a12/img/birdBanner.svg" style="width: 1300px;">
-</div>
-<div class="main">
-<div class="face1">
-<div class="face2">
-<img src="https://raw.githubusercontent.com/FuguFX/FuguFX.github.io/main/img/face.png" style="width: 200px;">
-</div>
-</div>
-<div class="name">
-<h1>ふぐ/ぐれべ</h1>
-</div>
-<div class="sentence">
-<h2>よくわからないへんなやつ</h2>
-<h2>ぱっと見サル</h2>
-</div>
-<div class="big1">
-<div class="big2">
-<div class="big3">
-<h1>よく使うやつたち</h1>
-</div>
-</div>
-</div>
-<div class="language">
-<div class="js">
-</div>
-<div class="lan-animation">
-</div>
-<img class="lan-animation" src="https://raw.githubusercontent.com/FuguFX/FuguFX.github.io/6bd8a803d7362e5a509674360927e849a5f16a12/img/html-5.svg" style="width: 100px;">
-<img class="lan-animation" src="https://raw.githubusercontent.com/FuguFX/FuguFX.github.io/6bd8a803d7362e5a509674360927e849a5f16a12/img/css-3.svg" style="width: 100px;">
-<img class="js" src="https://raw.githubusercontent.com/FuguFX/FuguFX.github.io/6bd8a803d7362e5a509674360927e849a5f16a12/img/javascript.svg" style="width: 100px;">
-</div>
-<div class="center1">
-<div class="center2">
-<h1>JSはあんま使わないけどバランス調整で入れたよ！</h1>
-</div>
-</div>
-<div class="big1">
-<div class="big2">
-<div class="big3">
-<h1>私の自信作たち</h1>
-</div>
-</div>
-</div>
-<div class="thumbnail">
-<div class="thumbnail1">
-<img src="https://raw.githubusercontent.com/FuguFX/FuguFX.github.io/main/img/Thumbnail1.png" style="width: 400px;">
-</div>
-<div class="explain">
-<a href="https://scratch.mit.edu/projects/788110231/"><h1>Intro▹-SunFy-</h1></a>
-</div>
-<div class="thumbnail2">
-<img src="https://raw.githubusercontent.com/FuguFX/FuguFX.github.io/main/img/Thumbnail2.png" style="width: 400px;">
-</div>
-<div class="explain">
-<a href="https://scratch.mit.edu/projects/650344059/"><h1>Intro▹kumanomi</h1></a>
-</div>
-</div>
-<div class="space">
-</div>
-</div>
-</div>
-<div class="footer">
-<h2>ふぐえふえっくすのあああ</h2>
-<h3>©FuguFX</h3>
-</div>
+    <div class="move">
+        <p><a href="https://fugufx.github.io/haha770_125.github.io/">私について</a></p>
+        <p><a href="https://fugufx.github.io/history/">クイズ</a></p>
+    </div>
+
+    <div class="main">
+        <h1>ステータス</h1>
+        <p>ゲームとプログラミングが好きな中学３年生の一般人です。<a href="https://scratch.mit.edu/users/-Grebe-/">Scratch</a>と<a href="https://github.com/FuguFX">GitHub</a>で活動しています。</p>
+    </div>
+
+    <div class="main">
+        <h1>好きなゲーム</h1>
+        <p>ゲーム好きとしてこの項目をウェブサイトから外すことは私にはできません。私が好きなゲームは数多くあるのですが、その中でもピックアップして大好きなゲームを紹介します。</p>
+    </div>
+
 </body>
 </html>
-
