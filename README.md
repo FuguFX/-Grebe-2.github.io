@@ -11,7 +11,7 @@
 ・レイアウトを工夫しました。
 
 ## 使い方
-・ページは[こちら](https://fugufx.github.io/)からアクセスできます。
+・ページは[こちら](https://fugufx.github.io/fugufx.html)からアクセスできます。
 
 ## 注意事項
 ・特になし。
