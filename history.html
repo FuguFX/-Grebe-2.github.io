@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歴史の年クイズ</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/FuguFX/history/main/imgs/favicon.ico">
+
+    <style>
+        body {
+            margin: 0px;
+            cursor: auto;
+            overflow-x: hidden;
+            width: 100%;
+            height: 100%;
+            background-color: #efedeb;
+            text-align: center;
+        }
+
+        .hideNumber {
+            line-height: 0px;
+            cursor: default;
+            color: #efedeb;
+            font-size: 0%;
+        }
+
+        .title {
+            text-align: center;
+            line-height: auto;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            font-family: 游ゴシック;
+            font-weight: bold;
+            font-size: 30px;
+            background-color: #ff1f4b;
+            color: #efedeb;
+        }
+
+        .move {
+            user-select: none;
+            text-align: center;
+            font-family: 游ゴシック;
+            font-size: 20px;
+        }
+
+        .move p {
+            cursor: pointer;
+            padding-top: 4px;
+            padding-bottom: 2px;
+            margin-top: -10px;
+            width: 25%;
+            height: 30px;
+            float: left;
+            background-color: #ff1f4b;
+            color: #efedeb;
+            text-decoration: none;
+            transition: all 0.5s 0s ease;
+        }
+
+        .move p:hover {
+            background-color: #ca1a3d;
+        }
+
+        .move a {
+            color: #efedeb;
+            text-decoration: none;
+        }
+
+        .question {
+            line-height: auto;
+
+            padding-bottom: 3px;
+            height: auto;
+            font-family: 游ゴシック;
+            font-size: 40px;
+            color: #ff1f4b;
+            text-decoration: underline solid 1px;
+        }
+
+        .answer {
+            line-height: 0px;
+            height: auto;
+            font-family: 游ゴシック;
+            font-size: 25px;
+            color: #ff1f4b;
+        }
+
+        .button {
+            line-height: 0px;
+            cursor: pointer;
+            user-select: none;
+            background-color: #ff1f4b;
+            color: #efedeb;
+            font-family: 游ゴシック;
+            font-weight: bold;
+            display: inline-block;
+            padding-left: 15px;
+            padding-right: 15px;
+            transition: all 0.5s 0s ease;
+        }
+
+        .button:hover {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .sorry {
+            margin-top: 50px;
+            line-height: auto;
+            font-family: 游ゴシック;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hideNumber">
+        <p id="num">番号</p>
+    </div>
+
+    <div class="title">
+        <p>歴史的出来事が起こった年クイズ</p>
+    </div>
+
+    <div class="move">
+        <p><a href="https://fugufx.github.io/">私について</a></p>
+        <p><a href="https://fugufx.github.io/history/">クイズ</a></p>
+        <p><a href="https://fugufx.github.io/jamaica/">ジャマイカ</a></p>
+        <p><a href="https://fugufx.github.io/calculator/">電卓</a></p>
+    </div>
+
+    <br>
+
+    <div class="question">
+        <p id="sentence">問題</p>
+    </div>
+
+    <div class="button">
+        <p onclick="buttonDownAnswer()">解答する</p>
+    </div>
+
+    <div class="answer">
+        <p id="ans">answer</p>
+        <p id="year">year</p>
+    </div>
+
+    <div class="button">
+        <p onclick="buttonDownAnother()">他の問題</p>
+    </div>
+
+    <div class="sorry">
+        ※注意
+        <br>
+        私調べなので年が間違っているかもしれません。
+        <br>
+        年の説がいくつかあるものもあります。
+        <br>
+        （例：鎌倉時代始まる→1185年もしくは1192年ですが、このクイズでは1185年のほうを採用しています。）
+    </div>
+
+
+
+    <script>
+        let allQuestion = [
+            '聖徳太子が推古天皇の摂政になる',//593
+            '大化の改新',//645
+            '奈良時代始まる',//710
+            '平安時代始まる',//794
+            '遣唐使を廃止',//894
+            '鎌倉時代始まる',//1185
+            '室町時代始まる',//1336
+            'コロンブスがアメリカ大陸を発見',//1492
+            '安土桃山時代始まる',//1573
+            '本能寺の変',//1582
+            '関ヶ原の戦い',//1600
+            '江戸時代始まる',//1603
+            '武家諸法度',//1615
+            'ピューリタン革命',//1642
+            'アメリカ独立宣言',//1776
+            '大塩平八郎の乱',//1837
+            '薩長同盟結ぶ',//1866
+            '明治時代始まる',//1868
+            '大日本帝国憲法公布',//1889
+            '大正時代始まる',//1912
+            '第一次世界大戦始まる',//1914
+            'ロシア革命',//1917
+            '昭和時代始まる',//1926
+            '第二次世界大戦始まる',//1939
+            '日本国憲法',//1946
+            '日本でオリンピックが初めて開催',//1964
+            'バブル景気始まる',//1988
+            '平成時代始まる',//1989
+            'リーマンショック',//2008
+            '令和時代始まる',//2019
+        ];
+
+        let allYear = [
+            593,
+            645,
+            710,
+            794,
+            894,
+            1185,
+            1336,
+            1492,
+            1573,
+            1582,
+            1600,
+            1603,
+            1615,
+            1642,
+            1776,
+            1837,
+            1866,
+            1868,
+            1889,
+            1912,
+            1914,
+            1917,
+            1926,
+            1939,
+            1946,
+            1964,
+            1988,
+            1989,
+            2008,
+            2019,
+        ];
+        var result = '';
+        var Answer = "まだ";
+        var number = Math.floor(Math.random() * (30 - 0) + 0);
+        var question = allQuestion[number];
+        document.getElementById("ans").textContent = "　";
+        document.getElementById("year").textContent = "　";
+        document.getElementById("num").textContent = number;
+        document.getElementById("sentence").textContent = question;
+        function buttonDownAnswer(){
+        Answer = prompt("起こった年を入力してください(半角数字)");
+        if (allYear[number] == Answer) {
+            var result = "正解";
+            document.getElementById("ans").textContent = result;
+            document.getElementById("year").textContent = allYear[number] + "年";
+
+        } else if(Answer == 'まだ') {
+            var result = "まだ";
+            document.getElementById("ans").textContent = result;
+            document.getElementById("year").textContent = allYear[number] + "年";
+
+        } else {
+            var result = "不正解";
+            document.getElementById("ans").textContent = result;
+            document.getElementById("year").textContent = allYear[number] + "年";
+        }
+        }
+        let button = document.getElementById("btn");
+        button.addEventListener("mousedown", mouseDown);
+
+        function buttonDownAnother(){
+            location.reload();
+        }
+    </script>
+</body>
+</html>
