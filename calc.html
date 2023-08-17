@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電卓</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/FuguFX/history/main/imgs/favicon.ico">
+
+    <style>
+        body {
+            margin: 0px;
+            cursor: auto;
+            overflow-x: hidden;
+            width: 100%;
+            height: 100%;
+            background-color: #efedeb;
+            text-align: center;
+        }
+
+        .title {
+            text-align: center;
+            line-height: auto;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            font-family: 游ゴシック;
+            font-weight: bold;
+            font-size: 30px;
+            background-color: #ff1f4b;
+            color: #efedeb;
+        }
+
+        .move {
+            user-select: none;
+            text-align: center;
+            font-family: 游ゴシック;
+            font-size: 20px;
+        }
+
+        .move p {
+            cursor: pointer;
+            display: block;
+            padding-top: 4px;
+            padding-bottom: 2px;
+            margin-top: -10px;
+            width: 25%;
+            height: 30px;
+            float: left;
+            background-color: #ff1f4b;
+            color: #efedeb;
+            text-decoration: none;
+            transition: all 0.5s 0s ease;
+        }
+
+        .move p:hover {
+            background-color: #ca1a3d;
+        }
+
+        .move a {
+            color: #efedeb;
+            text-decoration: none;
+        }
+
+        .space {
+            padding-bottom: 20px;
+        }
+
+        .spaceTwo {
+            padding-bottom: 35px;
+        }
+
+        .all {
+            width: 100%;
+            text-align: center;
+        }
+
+        .set {
+            margin-bottom: 50px;
+        }
+
+        .back {
+            font-family: 游ゴシック;
+            color: #efedeb;
+            background-color: #ca1a3d;
+            font-size: 40px;
+            line-height: 60px;
+            width: 240px;
+            text-align: center;
+        }
+
+        .result {
+            font-family: 游ゴシック;
+            color: #efedeb;
+            font-size: 40px;
+            line-height: 60px;
+            width: 240px;
+            margin-top: -100px;
+            text-align: center;
+        }
+
+        .two {
+            padding-left: calc(50% - 121px);
+        }
+
+        .main {
+            position: fixed;
+            top: 275px;
+        }
+
+        .number {
+            user-select: none;
+            cursor: pointer;
+            font-family: 游ゴシック;
+            font-size: 20px;
+            text-align: center;
+            line-height: 250%;
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            color: #efedeb;
+            background-color: #ca1a3d;
+            width: 50px;
+            height: 50px;
+            float: left;
+            border-radius: 20%;
+            transition: all 0.5s 0s ease;
+        }
+
+        .number:hover {
+            background-color: #ff1f4b;
+            border-radius: 0%;
+        }
+
+        .ac {
+            user-select: none;
+            cursor: pointer;
+            font-family: 游ゴシック;
+            font-size: 20px;
+            text-align: center;
+            line-height: 250%;
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            color: #efedeb;
+            background-color: #ca1a3d;
+            width: 50px;
+            height: 50px;
+            float: left;
+            border-radius: 20%;
+            transition: all 0.5s 0s ease;
+        }
+
+        .ac:hover {
+            background-color: #ff1f4b;
+            border-radius: 0%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="title">
+        <p>電卓</p>
+    </div>
+
+    <div class="move">
+        <p><a href="https://fugufx.github.io/">私について</a></p>
+        <p><a href="https://fugufx.github.io/history/">クイズ</a></p>
+        <p><a href="https://fugufx.github.io/jamaica/">ジャマイカ</a></p>
+        <p><a href="https://fugufx.github.io/calculator/">電卓</a></p>
+    </div>
+
+    <div class="space"><br></div>
+    <div class="all">
+        <div class="two">
+            <div class="set">
+                <p class ="back">　</p>
+                <p class="result" id ="show">　</p>
+            </div>
+            <div class="main">
+                <p class="number" onclick="seven()">7</p>
+                <p class="number" onclick="eight()">8</p>
+                <p class="number" onclick="nine()">9</p>
+                <p class="number" onclick="divide()">÷</p>
+                <div class="spaceTwo"><br></div>
+                <p class="number" onclick="four()">4</p>
+                <p class="number" onclick="five()">5</p>
+                <p class="number" onclick="six()">6</p>
+                <p class="number" onclick="times()">×</p>
+                <div class="spaceTwo"><br></div>
+                <p class="number" onclick="one()">1</p>
+                <p class="number" onclick="two()">2</p>
+                <p class="number" onclick="three()">3</p>
+                <p class="number" onclick="minus()">-</p>
+                <div class="spaceTwo"><br></div>
+                <p class="number" onclick="zero()">0</p>
+                <p class="number" onclick="period()">.</p>
+                <p class="number" onclick="equal()">=</p>
+                <p class="number" onclick="plus()">+</p>
+                <p class="ac" onclick="ac()">AC</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        let show = "";
+        let showTwo = "";
+        let first = "";
+        let second = "";
+        let answer = "";
+
+
+        function zero() {
+            if (answer === "") {
+                if (show === "") {
+                } else {
+                    show = show + "0";
+                    document.getElementById("show").textContent = showTwo + show;
+                }
+            }
+        }
+
+        function one() {
+            if (answer === "") {
+                show = show + "1";
+                document.getElementById("show").textContent = showTwo + show;
+            }
+        }
+
+        function two() {
+            if (answer === "") {
+                show = show + "2";
+                document.getElementById("show").textContent = showTwo + show;
+            }
+        }
+
+        function three() {
+            if (answer === "") {
+                show = show + "3";
+                document.getElementById("show").textContent = showTwo + show;
+            }
+        }
+
+        function four() {
+            if (answer === "") {
+                show = show + "4";
+                document.getElementById("show").textContent = showTwo + show;
+            }
+        }
+
+        function five() {
+            if (answer === "") {
+                show = show + "5";
+                document.getElementById("show").textContent = showTwo + show;
+            }
+        }
+
+        function six() {
+            if (answer === "") {
+                show = show + "6";
+                document.getElementById("show").textContent = showTwo + show;
+            }
+        }
+
+        function seven() {
+            if (answer === "") {
+                show = show + "7";
+                document.getElementById("show").textContent = showTwo + show;
+            }
+        }
+
+        function eight() {
+            if (answer === "") {
+                show = show + "8";
+                document.getElementById("show").textContent = showTwo + show;
+            }
+        }
+
+        function nine() {
+            if (answer === "") {
+                show = show + "9";
+                document.getElementById("show").textContent = showTwo + show;
+            }
+        }
+
+        function period() {
+            if (answer === "") {
+                if (show === "") {
+                } else {
+                    if (show.includes(".")){
+                    } else {
+                        show = show + ".";
+                        document.getElementById("show").textContent = showTwo + show;
+                    }
+                }
+            }
+        }
+
+        function plus() {
+            if (show === "") {
+            } else {
+                if (showTwo === "") {
+                first = Number(show);
+                showTwo = "+";
+                show ="";
+                document.getElementById("show").textContent = showTwo + show;
+                console.log(showTwo);
+                }   
+            }
+            
+        }
+
+        function minus() {
+            if (show === "") {
+                show = "-";
+                document.getElementById("show").textContent = showTwo + show;
+            } else {
+                if (showTwo === "") {
+                    first = Number(show);
+                    showTwo = "-";
+                    show ="";
+                    document.getElementById("show").textContent = showTwo + show;
+                    console.log(showTwo);
+                }
+            }
+        }
+
+        function times() {
+            if (show === "") {
+            } else {
+                if (showTwo === "") {
+                    first = Number(show);
+                    showTwo = "×";
+                    show ="";
+                    document.getElementById("show").textContent = showTwo + show;
+                    console.log(showTwo);
+                }
+            }
+        }
+
+        function divide() {
+            if (show === "") {
+            } else {
+                if (showTwo === "") {
+                    first = Number(show);
+                    showTwo = "÷";
+                    show ="";
+                    document.getElementById("show").textContent = showTwo + show;
+                    console.log(showTwo);
+                }
+            }
+        }
+
+        function equal() {
+            if (showTwo === "") {
+            } else {
+                if (show === "") {
+                } else {
+                    if (answer === "") {
+                        second = Number(show);
+                        if (showTwo === "+") {
+                            answer = first + second;
+                            show = Number(answer);
+                            document.getElementById("show").textContent = "=" + show;
+                            console.log(showTwo);
+                        } else if (showTwo === "-") {
+                            answer = first - second;
+                            show = Number(answer);
+                            document.getElementById("show").textContent = "=" + show;
+                            console.log(showTwo);
+                        } else if (showTwo === "×") {
+                            answer = first * second;
+                            show = Number(answer);
+                            document.getElementById("show").textContent = "=" + show;
+                            console.log(showTwo);
+                        } else if (showTwo === "÷") {
+                            answer = first / second;
+                            show = Number(answer);
+                            document.getElementById("show").textContent = "=" + show;
+                            console.log(showTwo);
+                        }
+                    }
+                }
+            }
+        }
+
+        function ac() {
+            show = "";
+            showTwo = "";
+            first = "";
+            second = "";
+            answer = "";
+            document.getElementById("show").textContent = show;
+        }
+
+    </script>
+</body>
+</html>
