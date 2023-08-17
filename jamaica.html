@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ジャマイカ</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/FuguFX/history/main/imgs/favicon.ico">
+
+    <style>
+        body {
+            margin: 0px;
+            cursor: auto;
+            overflow-x: hidden;
+            width: 100%;
+            height: 100%;
+            background-color: #efedeb;
+            text-align: center;
+        }
+
+        .title {
+            text-align: center;
+            line-height: auto;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            font-family: 游ゴシック;
+            font-weight: bold;
+            font-size: 30px;
+            background-color: #ff1f4b;
+            color: #efedeb;
+        }
+
+        .move {
+            user-select: none;
+            text-align: center;
+            font-family: 游ゴシック;
+            font-size: 20px;
+        }
+
+        .move p {
+            cursor: pointer;
+            padding-top: 4px;
+            padding-bottom: 2px;
+            margin-top: -10px;
+            width: 25%;
+            height: 30px;
+            float: left;
+            background-color: #ff1f4b;
+            color: #efedeb;
+            text-decoration: none;
+            transition: all 0.5s 0s ease;
+        }
+
+        .move p:hover {
+            background-color: #ca1a3d;
+        }
+
+        .move a {
+            color: #efedeb;
+            text-decoration: none;
+        }
+
+        .a {
+            font-family: 游ゴシック;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            color: #efedeb;
+            background-color: #000000;
+            font-size: 20px;
+            line-height: 250%;
+            margin: 20px;
+            border-radius: 100%;
+            border: 40px solid #ca1a3d;
+        }
+
+        .b {
+            font-family: 游ゴシック;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            color: #efedeb;
+            background-color: #000000;
+            font-size: 20px;
+            line-height: 250%;
+            margin: 20px;
+            border-radius: 100%;
+            border: 20px solid #ff1f4b;
+        }
+
+        .c, .d, .e, .f, .g {
+            font-family: 游ゴシック;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            color: #000000;
+            background-color: #ffffff;
+            font-size: 20px;
+            line-height: 250%;
+            margin: 20px;
+            border-radius: 100%;
+            border: 20px solid #ff1f4b;
+        }
+
+
+
+        .a {
+            position: fixed;
+            top: 240px;
+            left:calc(50% - 85px);
+        }
+
+        .b {
+            position: fixed;
+            top: 160px;
+            left:calc(50% - 65px);
+        }
+
+        .c {
+            position: fixed;
+            top: 210px;
+            left:calc(50% + 20px);
+        }
+
+        .d {
+            position: fixed;
+            top: 310px;
+            left:calc(50% + 20px);
+        }
+
+        .e {
+            position: fixed;
+            top: 360px;
+            left:calc(50% - 65px);
+        }
+
+        .f {
+            position: fixed;
+            top: 310px;
+            left:calc(50% - 150px);
+        }
+
+        .g {
+            position: fixed;
+            top: 210px;
+            left:calc(50% - 150px);
+        }
+
+        .large {
+            padding-bottom: 350px;
+        }
+
+        .button {
+            line-height: 0px;
+            cursor: pointer;
+            user-select: none;
+            background-color: #ff1f4b;
+            color: #efedeb;
+            font-family: 游ゴシック;
+            font-weight: bold;
+            display: inline-block;
+            padding-left: 15px;
+            padding-right: 15px;
+            transition: all 0.5s 0s ease;
+        }
+
+        .button:hover {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="title">
+        <p>ジャマイカシミュレーター</p>
+    </div>
+
+    <div class="move">
+        <p><a href="https://fugufx.github.io/">私について</a></p>
+        <p><a href="https://fugufx.github.io/history/">クイズ</a></p>
+        <p><a href="https://fugufx.github.io/jamaica/">ジャマイカ</a></p>
+        <p><a href="https://fugufx.github.io/calculator/">電卓</a></p>
+    </div>
+
+    <div class="large">
+        <br>
+    </div>
+
+    <div class="button">
+        <p onclick="buttonDownSpin()">ジャマイカを転がす</p>
+    </div>
+
+    <div class="main">
+            <p class="b" id="b">1</p>
+            <p class="c" id="c">1</p>
+            <p class="d" id="d">1</p>
+            <p class="e" id="e">1</p>
+            <p class="f" id="f">1</p>
+            <p class="g" id="g">1</p>
+            <p class="a" id="a">1</p>
+    </div>
+
+
+    <script>
+        let a= Math.floor(Math.random() * (7 - 1) + 1) * 10;;
+        let b= Math.floor(Math.random() * (7 - 1) + 1);;
+        let c= Math.floor(Math.random() * (7 - 1) + 1);;
+        let d= Math.floor(Math.random() * (7 - 1) + 1);;
+        let e= Math.floor(Math.random() * (7 - 1) + 1);;
+        let f= Math.floor(Math.random() * (7 - 1) + 1);;
+        let g= Math.floor(Math.random() * (7 - 1) + 1);;
+        document.getElementById("a").textContent = a;
+        document.getElementById("b").textContent = b;
+        document.getElementById("c").textContent = c;
+        document.getElementById("d").textContent = d;
+        document.getElementById("e").textContent = e;
+        document.getElementById("f").textContent = f;
+        document.getElementById("g").textContent = g;
+        function buttonDownSpin() {
+            let a= Math.floor(Math.random() * (7 - 1) + 1) * 10;;
+            let b= Math.floor(Math.random() * (7 - 1) + 1);;
+            let c= Math.floor(Math.random() * (7 - 1) + 1);;
+            let d= Math.floor(Math.random() * (7 - 1) + 1);;
+            let e= Math.floor(Math.random() * (7 - 1) + 1);;
+            let f= Math.floor(Math.random() * (7 - 1) + 1);;
+            let g= Math.floor(Math.random() * (7 - 1) + 1);;
+            document.getElementById("a").textContent = a;
+            document.getElementById("b").textContent = b;
+            document.getElementById("c").textContent = c;
+            document.getElementById("d").textContent = d;
+            document.getElementById("e").textContent = e;
+            document.getElementById("f").textContent = f;
+            document.getElementById("g").textContent = g;
+        }
+    </script>
+</body>
+</html>
